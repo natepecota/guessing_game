@@ -1,0 +1,2 @@
+README
+This is a guessing game that let's you guess what your age is in hours.  First enter your age, then guess how many hours that translates to. If you are correct, then you are great at math or have a calculator If you are incorrect, that's ok, the answer is provided after your guess.
