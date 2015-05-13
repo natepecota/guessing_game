@@ -1,17 +1,28 @@
 <script type="text/javascript">
-  var userAge, userGuess, correctAnswer;
+  var Game = function(age) {
+    this.age = age;
+    this.guess;
+    this.answer = age * 365 * 24;
 
-  userAge = prompt("How old are you?");
-  userGuess = prompt("If you are " + userAge + ", how many hours have you been alive?");
-  correctAnswer = userAge * 365 * 24;
-
-  while(userGuess != correctAnswer) {
-    if(userGuess > correctAnswer) {
-      userGuess = prompt("Your guess is too high, try again!");
-    }
-    else if(userGuess < correctAnswer) {
-      userGuess = prompt("Your guess is too low, try again!");
+    this.compare = function() {
+      console.log(this);
+      while(this.guess != this.answer) {
+        if(this.guess > this.answer) {
+          this.guess = prompt("Your guess is too high, try again!");
+        } else if(this.guess < this.answer) {
+          this.guess = prompt("Your guess is too low, try again!");
+        }
+        console.log(this);
+      }
+      alert("That's correct, you've been alive for " + this.answer + " hours!");
     }
   }
-  alert("That's correct, you've been alive for " + correctAnswer + " hours!");
+
+  var age = prompt("How old are you?");
+  var newGame = new Game(age);
+
+  newGame.guess = prompt("If you are " + this.age + ", how many hours have you been alive?");
+  newGame.compare();
 </script>
+
+
