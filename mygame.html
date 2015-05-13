@@ -1,27 +1,17 @@
 <script type="text/javascript">
-  var age, hours, answer, message;
+  var userAge, userGuess, correctAnswer;
 
-  age = prompt("How old are you?");
-  hours = prompt("If you are " + age + ", how many hours have you been alive?");
-  answer = age * 365 * 24;
+  userAge = prompt("How old are you?");
+  userGuess = prompt("If you are " + userAge + ", how many hours have you been alive?");
+  correctAnswer = userAge * 365 * 24;
 
-  while (hours != answer) {
-    if(hours > answer) {
-      message = "Too High";
-      alert(message);
-      hours = prompt("Try Again");
+  while(userGuess != correctAnswer) {
+    if(userGuess > correctAnswer) {
+      userGuess = prompt("Your guess is too high, try again!");
     }
-    else(hours < answer) {
-      message = "Too Low";
-      alert(message);
-      hours = prompt("Try Again");
-    }
-      break;
+    else if(userGuess < correctAnswer) {
+      userGuess = prompt("Your guess is too low, try again!");
     }
   }
-
-  if(hours == answer) {
-      message = hours + " is correct! That's a lot of hours!";
-  alert(message);
-  }
+  alert("That's correct, you've been alive for " + correctAnswer + " hours!");
 </script>
